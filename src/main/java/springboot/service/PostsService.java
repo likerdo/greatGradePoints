@@ -5,9 +5,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import springboot.domain.posts.PostRepository;
 import springboot.domain.posts.Posts;
+import springboot.web.dto.PostListResponseDto;
 import springboot.web.dto.PostResponseDto;
 import springboot.web.dto.PostUpdateRequestDto;
 import springboot.web.dto.PostsSaveRequestDto;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -32,5 +36,12 @@ public class PostsService {
         Posts entity = postsRepository.findById(id)
                 .orElseThrow(()-> new IllegalArgumentException("해당 사용자가 없습니다. id="+id));
         return new PostResponseDto(entity);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostListResponseDto> findAllDesc(){
+        return postsRepository.findAllDesc().stream()
+                .map(PostListResponseDto::new)
+                .collect(Collectors.toList());
     }
 }
