@@ -7,5 +7,12 @@ spring:
   h2:
     console:
       enabled: true
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  profiles:
+    include: oauth
 server:
   port: 9000

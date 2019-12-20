@@ -9,6 +9,7 @@ import springboot.web.dto.HelloResponseDto;
 public class HelloController {
     @GetMapping("/hello")
     public String hello(){
+        System.out.println("hot-swap");
         return "hello";
     }
 
