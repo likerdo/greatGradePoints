@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import springboot.config.auth.LoginUser;
 import springboot.config.auth.dto.SessionUser;
-import springboot.domain.user.User;
 import springboot.service.PostsService;
 import springboot.web.dto.PostResponseDto;
 
@@ -25,7 +24,7 @@ public class IndexController {
         model.addAttribute("posts", postsService.findAllDesc());
 
         if (user != null) {
-            model.addAttribute("userName", user);
+            model.addAttribute("userName", user.getName());
         }
         return "index";
     }
