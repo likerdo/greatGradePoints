@@ -1,5 +1,5 @@
 REPOSITORY=/home/ec2-user/app/step2
-PROJECT_NAME=great-grade-points
+PROJECT_NAME=greatGradePoints
 
 cd $REPOSITORY/$PROJECT_NAME/
 
@@ -7,7 +7,7 @@ echo "> Build 파일 복사"
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> 현재 구동중인 애플리케이션을  확인하는중입니다"
-CURRENT_PID=$(pgrep -fl great-grade-points | awk '{print $1}')
+CURRENT_PID=$(pgrep -fl greatGradePoints | awk '{print $1}')
 
 if [ -z "$CURRENT_PID" ] ; then
         echo "> 현재 구동중인 애플리케이션이 없습니다"
