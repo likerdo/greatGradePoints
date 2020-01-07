@@ -18,7 +18,7 @@ else
 fi
 
 echo "> 새 애플리케이션을 배포합니다"
-JAR_NAME=$(ls -tr $REPOSITORY/ | grep *.jar | tail -n 1 )
+JAR_NAME=$(ls -tr $REPOSITORY/*.jar | tail -n 1 )
 
 echo "> $JAR_NAME 에 실행권한을 추가합니다"
 
