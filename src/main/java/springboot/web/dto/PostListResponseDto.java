@@ -10,12 +10,12 @@ public class PostListResponseDto {
     private Long id;
     private String title;
     private String author;
-    private LocalDateTime modifiedDateTime;
+    private LocalDateTime modifiedDate;
 
     public PostListResponseDto(Posts entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.author = entity.getAuthor();
-        this.modifiedDateTime = entity.getModifiedDate();
+        this.modifiedDate = entity.getModifiedDate();
     }
 }
